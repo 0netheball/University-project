@@ -1,0 +1,5 @@
+body {
+  font-family: Arial;
+  /* body element has default margin - 8px around */
+  margin: 0px; 
+}

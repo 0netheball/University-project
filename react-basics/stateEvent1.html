@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Display as you type</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      
+      
+      function App() {
+        const [display, setDisplay] = React.useState('');
+
+        function onType(event) {
+          const typing = event.target.value;
+          setDisplay(typing);
+        }
+        function resetInput() {
+          setDisplay('');
+        }
+
+        function getExample() {
+          setDisplay('Alice')
+        }
+
+        return (
+          <>
+            <input 
+              onChange={onType}
+              value={display}
+            />
+            <button 
+              onClick={resetInput}
+            >Reset</button>
+            <button
+              onClick={getExample}
+            >Example</button>
+            <p>Hello, {display}</p>
+          </>
+        );
+      }
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>

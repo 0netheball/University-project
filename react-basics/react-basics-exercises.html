@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics exercises</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+    
+    <!--Download react for websites-->
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <!-- Download javascript compiler to translate other languages into javascript -->
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      const button = <button>Good job!</button>;
+      const name = 'Alexander';
+      const secondName = 'Alspecthor';
+      const paragraph = <p>My name is {name}</p>;
+
+      const object1 = {
+        name: 'Corton Socks', 
+        price: 15
+      };
+      const object2 = {
+        name: 'Tshirt', 
+        price: 20
+      };
+      const addToCartButton = <button>Add to Cart</button>;
+      const totalCost = object1.price + object2.price;
+
+      const productCost = object1.price;
+      const shippingCost = 5;
+      const totalPrice = productCost + shippingCost;
+      
+
+
+      const costContainer = (
+        <div>
+          <p>Product cost: ${productCost}</p>
+          <p>Shipping cost: ${shippingCost}</p>
+          <p>Total cost: ${totalPrice}</p>
+        </div>
+      );
+      
+      
+      const today = dayjs();
+      const todayString = today.format('MMMM D');
+      console.log(todayString);
+
+      // const clock = setInterval(() => {
+      //   const currentTime = dayjs().format('HH:mm:ss');
+      //   root.render(currentTime);
+      // }, 1000);
+      
+
+      const displayDate = (
+        <div>
+          <p>Current day: {todayString}</p>
+          <p>Current time: {clock}</p>
+        </div>
+      );
+      
+      
+
+      // const displayContainer = (
+      //   <div>
+      //     {button}
+      //     {paragraph}
+      //     <p>This is my second name: {secondName}</p>
+
+      //     <div>Products cost: ${totalCost}</div>
+      //     {costContainer}
+      //     <p>Today is {todayString}</p>
+      //     <p>Current time: {currentTime}</p>
+      //   </div>
+      // );
+
+
+      const container = document.querySelector('.js-container');
+      // ReactDOM.createRoot(container).render(currentTime);
+      const root = ReactDOM.createRoot(container);
+      root.render(displayDate);
+    </script>
+  </body>
+</html>

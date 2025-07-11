@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Counter</title>
+    <style>
+      .button-container {
+        display: flex;
+        justify-content: end;
+      }
+      .turned-button {
+        background-color: rgb(25, 135, 84);
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+      }
+      .unturned-button {
+        background-color: rgb(220, 53, 69);
+        border: none;
+        border-radius: 5px;
+        padding: 10px 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+      
+      
+      function App() {
+        const [turnedButton, setTurnedButton] = React.useState(true);
+        function switchButton() {
+          if (turnedButton === true) {
+            setTurnedButton(false);
+          } else if (turnedButton === false) {
+            setTurnedButton(true);
+          }
+        }
+
+        return (
+          <div className="button-container">
+            {turnedButton ? (<button 
+              className="turned-button"
+              onClick={switchButton}
+            >On</button>) : (<button 
+              className="unturned-button"
+              onClick={switchButton}
+            >OFF</button>)}
+            
+          </div>
+        );
+      }
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>

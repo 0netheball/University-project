@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Counter</title>
+    <style>
+      body {
+        margin: 0;
+      }
+      .app-container {
+        display: flex;
+        justify-content: center;
+        height: 100vh;
+        align-items: center;
+        background-color: rgb(222, 222, 222);
+      }
+      button {
+        background-color: rgb(25, 135, 84);
+        border: none;
+        /* border-radius: 5px; */
+        padding: 10px 15px;
+        margin-right: 5px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+   
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      
+      
+      
+      
+      function App() {
+        const [value, setValue] = React.useState(0);
+        
+
+        function increaseValue() {
+          setValue(value + 1);
+        }
+        
+        function resetValue() {
+          setValue(value === 0)
+        }
+        
+
+        /*
+          1. Press the button => run the function
+          2. Get buttonElement using useRef hook (DOM). In order to click multiple times use setInterval() method
+        */
+
+        const buttonElementRef = React.useRef(null);
+        const [intervalId, setIntervalId] = React.useState(false);
+        
+        function autoRun() {
+          const buttonElement = buttonElementRef.current;
+          
+          if (!intervalId) {
+            setIntervalId(setInterval(() => {
+              buttonElement.click()
+            }, 1000));
+          } else {
+            setIntervalId(clearInterval(intervalId));
+          }
+          // Reminder: initial value of useState is always saved as initial value
+        }        
+
+        
+        
+
+        return (
+          <div className="app-container">
+            <button
+              onClick={increaseValue}
+              ref={buttonElementRef}
+            >Clicked {value} times</button>
+            <button 
+              onClick={resetValue}
+            >Reset</button>
+            <button
+              onClick={autoRun}
+            >Auto Click</button>
+          </div>
+        );
+      }
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>

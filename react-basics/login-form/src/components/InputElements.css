@@ -1,0 +1,14 @@
+.input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+
+  margin-bottom: 10px;
+}
+.input-element {
+  padding: 5px 10px;
+  border-radius: 5px;
+  border-width: 1px;
+  margin-right: 5px;
+}
