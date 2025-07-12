@@ -1,7 +1,7 @@
 import './header.css';
 import './HomePage.css';
 
-export default function HomePage() {
+export function HomePage() {
   return (
     <>
       <title>Ecommerce Project</title>
