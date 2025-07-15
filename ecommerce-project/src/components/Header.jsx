@@ -4,6 +4,7 @@ import MobileLogo from '../assets/images/mobile-logo-white.png'
 import './Header.css';
 
 export function Header({ cart }) {
+  // Accumulation Pattern
   let totalQuantity = 0; 
 
   cart.forEach((cartItem) => {
