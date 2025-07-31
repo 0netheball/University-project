@@ -7,8 +7,6 @@ import './TrackingPage.css';
 
 export function TrackingPage({ cart }) {
   const { orderId, productId } = useParams();
-  // 27cba69d-4c3d-4098-b42d-ac7fa62b7664
-  // e43638ce-6aa0-4b85-b27f-e1d07eb678c6
 
   const [order, setOrder] = useState(null);
 
