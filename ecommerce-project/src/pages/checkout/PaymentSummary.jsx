@@ -1,6 +1,20 @@
+import axios from 'axios';
+import { useNavigate } from 'react-router';
 import {formatCurrency} from '../../utils/money';
 
-export function PaymentSummary({paymentSummary}) {
+export function PaymentSummary({paymentSummary, loadCart}) {
+  const navigate = useNavigate();
+  const createOrder = async () => {
+    /*
+    Remember the cart is already saved in the backend
+    so the backend can take that cart and create an order for us
+    */
+    await axios.post('/api/orders');
+    // after create an order, backend will remove cartItem in the cart, we need to reload the cart
+    await loadCart();
+    navigate('/orders');
+  }
+
   return (
     <div className="payment-summary">
       <div className="payment-summary-title">
@@ -44,7 +58,7 @@ export function PaymentSummary({paymentSummary}) {
             </div>
           </div>
 
-          <button className="place-order-button button-primary">
+          <button className="place-order-button button-primary" onClick={createOrder}>
             Place your order
           </button>
         </>
