@@ -56,8 +56,9 @@ describe('test suite: Product component:', () => {
 
     render(<Product product={product} loadCart={loadCart}/>);
 
-    const user = userEvent.setup();
     const addToCartButton = screen.getByTestId('add-to-cart-button');
+
+    const user = userEvent.setup(); // Set up user event
     await user.click(addToCartButton);
 
     expect(axios.post).toHaveBeenCalledWith('/api/cart-items', {

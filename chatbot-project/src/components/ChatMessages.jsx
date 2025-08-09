@@ -23,9 +23,10 @@ export function ChatMessages({chatMessages}) {
       {chatMessages.map((message) => {
         return (
           <ChatMessage 
+            key={message.id}
             message={message.message}
             sender={message.sender}
-            key={message.id}
+            time={message.time}
           />
         );
       })}

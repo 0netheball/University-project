@@ -16,7 +16,17 @@
   margin-bottom: 10px;
   max-width: 300px;
 }
+.chat-message-time {
+  font-size: 12px;
+  color: grey;
+  padding-top: 5px;
+}
 
 .chat-message-profile {
   width: 45px;
+  height: 45px;
+  border-radius: 45px;
+  /* Prevents distortion */
+  object-fit: cover; 
+  object-position: center;
 }

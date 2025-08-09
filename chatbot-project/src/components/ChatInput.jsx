@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Chatbot } from 'supersimpledev';
+import dayjs from 'dayjs';
 import loadingGIF from '../assets/loading-spinner.gif';
 import './ChatInput.css';
 
@@ -31,7 +32,8 @@ export function ChatInput({chatMessages, setChatMessages}) {
       {
         id: crypto.randomUUID(),
         message: inputText,
-        sender: 'user'
+        sender: 'user', 
+        time: dayjs().valueOf()
       }, 
     ];
     setChatMessages(newChatMessages); // State is updated
@@ -46,7 +48,8 @@ export function ChatInput({chatMessages, setChatMessages}) {
       {
         id: crypto.randomUUID(),
         message: loadingImage,
-        sender: 'robot'
+        sender: 'robot',
+        time: dayjs().valueOf()
       }
     ]);
 
@@ -62,6 +65,11 @@ export function ChatInput({chatMessages, setChatMessages}) {
     ]);
 
     setIsLoading(false);
+  }
+
+  function clearMessages() {
+    setChatMessages([]);
+    localStorage.setItem('messages', JSON.stringify([]));
   }
 
   function resetInput(event) {
@@ -86,6 +94,11 @@ export function ChatInput({chatMessages, setChatMessages}) {
         onClick={sendMessage}
         className="send-button" // class is reserved
       >Send</button>
+
+      <button 
+        className='clear-button'
+        onClick={clearMessages}
+      >Clear</button>
     </div>
   );
  }
