@@ -4,7 +4,17 @@ import LogoWhite from '../assets/images/logo-white.png'
 import MobileLogo from '../assets/images/mobile-logo-white.png'
 import './Header.css';
 
-export function Header({ cart }) {
+// Type Alias = works like a variable, but for types
+type HeaderProps = {
+  cart: {
+    productId: string;
+    quantity: number; 
+    deliveryOptionId: string; 
+  }[];
+}
+
+// TypeScript does not have enough info to figure out the type
+export function Header({ cart }: HeaderProps) {
   const [search, setSearch] = useState('');
   const navigate = useNavigate();
 
