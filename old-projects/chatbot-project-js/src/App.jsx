@@ -2,6 +2,7 @@ import { Chatbot } from 'supersimpledev';
 import { useState, useEffect } from 'react';
 import { ChatInput } from './components/ChatInput';
 import ChatMessages from './components/ChatMessages';
+import RobotImage from './assets/robot.png';
 import './App.css';
 
 export default function App() {
@@ -45,9 +46,17 @@ export default function App() {
     localStorage.setItem('messages', JSON.stringify(chatMessages));
   }, [chatMessages]);
 
+  // const dynamicTitle = <title>{chatMessages.length} Messages</title>;
+  // const totalMessages = chatMessages.length;
+  const title = `${chatMessages.length} Messages`;
+
   return (
     <div className="app-container">
-      
+      {/* {dynamicTitle} */}
+      <title>{title}</title>
+      <link rel="icon" type="image/svg+xml" href={RobotImage} />
+
+
       <ChatMessages 
         chatMessages={chatMessages}
       />
