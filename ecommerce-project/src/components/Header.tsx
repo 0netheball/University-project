@@ -20,7 +20,11 @@ export function Header({ cart }: HeaderProps) {
 
 
 
-  const getTextInput = (event) => {
+  const getTextInput = (event: {
+    target: {
+      value: string;
+    }
+  }) => {
     setSearch(event.target.value);
   }
 
