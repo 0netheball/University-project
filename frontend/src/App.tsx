@@ -6,6 +6,9 @@ import { CheckoutPage } from './pages/checkout/CheckoutPage';
 import { OrdersPage } from './pages/orders/OrdersPage';
 import { TrackingPage } from './pages/TrackingPage';
 import { NotFoundPage } from './components/NotFoundPage';
+import { LoginPage } from './pages/LoginPage';
+import { ProtectedRoute } from './components/ProtectedRoute';
+import { AuthProvider } from './utils/AuthContext';
 import './App.css'
 
 export default function App() {
@@ -23,14 +26,19 @@ export default function App() {
   window.axios = axios;
 
   return (
-    <>
+    <AuthProvider>
       <Routes>
         <Route path='/' element={<HomePage cart={cart} loadCart={loadCart} />} />
-        <Route path='/checkout' element={<CheckoutPage cart={cart} loadCart={loadCart}/>} />
-        <Route path='/orders' element={<OrdersPage cart={cart} loadCart={loadCart}/>} />
+        <Route path='/login' element={<LoginPage />} />
+        <Route path='/checkout' element={
+          <ProtectedRoute><CheckoutPage cart={cart} loadCart={loadCart}/></ProtectedRoute>
+        } />
+        <Route path='/orders' element={
+          <ProtectedRoute><OrdersPage cart={cart} loadCart={loadCart}/></ProtectedRoute>
+        } />
         <Route path='/tracking/:orderId/:productId' element={<TrackingPage cart={cart} />} />
         <Route path='*' element={<NotFoundPage cart={cart} />} />
       </Routes>
-    </>
+    </AuthProvider>
   );
 }
