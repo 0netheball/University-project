@@ -44,6 +44,7 @@ app.use('/api/cart-items', authenticate, cartItemRoutes);
 app.use('/api/orders', authenticate, orderRoutes);
 app.use('/api/payment-summary', authenticate, paymentSummaryRoutes);
 app.use('/api/auth', authRoutes);
+app.use('/api/reset', resetRoutes);
 
 // Serve static files from the dist folder
 app.use(express.static(path.join(__dirname, 'dist')));

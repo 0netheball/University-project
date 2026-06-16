@@ -4,10 +4,12 @@ import { Product } from '../models/Product.js';
 import { DeliveryOption } from '../models/DeliveryOption.js';
 import { CartItem } from '../models/CartItem.js';
 import { Order } from '../models/Order.js';
+import { User } from '../models/User.js';
 import { defaultProducts } from '../defaultData/defaultProducts.js';
 import { defaultDeliveryOptions } from '../defaultData/defaultDeliveryOptions.js';
 import { defaultCart } from '../defaultData/defaultCart.js';
 import { defaultOrders } from '../defaultData/defaultOrders.js';
+import { defaultUser } from '../defaultData/defaultUser.js';
 
 const router = express.Router();
 
@@ -40,6 +42,7 @@ router.post('/', async (req, res) => {
     updatedAt: new Date(timestamp + index)
   }));
 
+  await User.create(defaultUser);
   await Product.bulkCreate(productsWithTimestamps);
   await DeliveryOption.bulkCreate(deliveryOptionsWithTimestamps);
   await CartItem.bulkCreate(cartItemsWithTimestamps);
