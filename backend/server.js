@@ -17,6 +17,12 @@ import { defaultProducts } from './defaultData/defaultProducts.js';
 import { defaultDeliveryOptions } from './defaultData/defaultDeliveryOptions.js';
 import { defaultCart } from './defaultData/defaultCart.js';
 import { defaultOrders } from './defaultData/defaultOrders.js';
+import { User } from './models/User.js';
+import authRoutes from './routes/auth.js';
+import { authenticate } from './middleware/authenticate.js';
+import { defaultUser } from './defaultData/defaultUser.js';
+import dotenv from 'dotenv';
+dotenv.config();
 import fs from 'fs';
 
 const app = express();
@@ -34,10 +40,10 @@ app.use('/images', express.static(path.join(__dirname, 'images')));
 // Use routes
 app.use('/api/products', productRoutes);
 app.use('/api/delivery-options', deliveryOptionRoutes);
-app.use('/api/cart-items', cartItemRoutes);
-app.use('/api/orders', orderRoutes);
-app.use('/api/reset', resetRoutes);
-app.use('/api/payment-summary', paymentSummaryRoutes);
+app.use('/api/cart-items', authenticate, cartItemRoutes);
+app.use('/api/orders', authenticate, orderRoutes);
+app.use('/api/payment-summary', authenticate, paymentSummaryRoutes);
+app.use('/api/auth', authRoutes);
 
 // Serve static files from the dist folder
 app.use(express.static(path.join(__dirname, 'dist')));
@@ -64,6 +70,12 @@ app.use((err, req, res, next) => {
 await sequelize.sync();
 
 const productCount = await Product.count();
+const userCount = await User.count();
+if (userCount === 0) {
+  await User.create(defaultUser);
+  console.log('Default user added.');
+}
+
 if (productCount === 0) {
   const timestamp = Date.now();
 
