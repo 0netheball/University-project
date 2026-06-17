@@ -1,5 +1,6 @@
 import express from 'express';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { sequelize } from './models/index.js';
@@ -31,8 +32,9 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 // Middleware
-app.use(cors());
+app.use(cors({ origin: 'http://127.0.0.1:5173', credentials: true }));
 app.use(express.json());
+app.use(cookieParser());
 
 // Serve images from the images folder
 app.use('/images', express.static(path.join(__dirname, 'images')));

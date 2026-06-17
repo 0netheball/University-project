@@ -16,6 +16,11 @@ Here's a list of all the URL Paths you can use with this backend and what each U
 - [POST /api/orders](#post-apiorders)
 - [GET /api/orders/:orderId](#get-apiordersorderid)
 
+**Auth**
+- [POST /api/auth/google](#post-apiauthgoogle)
+- [GET /api/auth/me](#get-apiauthme)
+- [POST /api/auth/logout](#post-apiauthlogout)
+
 **Payment Summary, Reset**
 - [GET /api/payment-summary](#get-apipayment-summary)
 - [POST /api/reset](#post-apireset)
@@ -230,3 +235,59 @@ Resets the database to its default state.
 
 **Response:**
 - Status: 204 No Response
+
+## POST /api/auth/google
+Authenticates a user via Google OAuth ID token. If the user is new, creates an account and copies the default seed cart and orders. Sets a JWT in an HttpOnly cookie.
+
+**Authentication:** None
+
+**Request:**
+```js
+{
+  "credential": "string"
+}
+```
+
+**Response:**
+```js
+{
+  "user": {
+    "id": "uuid",
+    "email": "string",
+    "picture": "string | null"
+  }
+}
+```
+
+**Side effect:** Sets HttpOnly cookie `token` (expires in 7 days)
+
+## GET /api/auth/me
+Returns the currently authenticated user based on the JWT cookie.
+
+**Authentication:** None (reads cookie, returns null if absent)
+
+**Response:**
+```js
+{
+  "user": {
+    "id": "uuid",
+    "email": "string",
+    "picture": "string | null"
+  }
+}
+```
+Returns `{ "user": null }` if not authenticated or token is invalid.
+
+## POST /api/auth/logout
+Clears the authentication cookie.
+
+**Authentication:** None
+
+**Response:**
+```js
+{
+  "ok": true
+}
+```
+
+**Side effect:** Clears HttpOnly cookie `token`

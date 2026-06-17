@@ -13,7 +13,7 @@ import './App.css'
 
 export default function App() {
   const [cart, setCart] = useState([]);
-  const { token } = useAuth();
+  const { isAuthenticated } = useAuth();
 
   const loadCart = async () => {
     try {
@@ -26,12 +26,12 @@ export default function App() {
   }
 
   useEffect(() => {
-    if (token) {
+    if (isAuthenticated) {
       loadCart();
     } else {
       setCart([]);
     }
-  }, [token]);
+  }, [isAuthenticated]);
 
   return (
     <Routes>

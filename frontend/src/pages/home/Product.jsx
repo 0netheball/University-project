@@ -7,15 +7,15 @@ export function Product({ product, loadCart }) {
   const [opacity, setOpacity] = useState(false);
 
   const addToCart = async () => {
-    /*
-    This is asynchronous code, it's not finished yet
-    It means we need to wait for it to finish: use async & await
-    */
-    await axios.post('/api/cart-items', {
-      productId: product.id,
-      quantity
-    });
-    await loadCart();
+    try {
+      await axios.post('/api/cart-items', {
+        productId: product.id,
+        quantity
+      });
+      await loadCart();
+    } catch {
+      return;
+    }
 
     setOpacity(true);
 
