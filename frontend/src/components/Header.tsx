@@ -1,10 +1,10 @@
 import { useState, useRef } from 'react';
 import { NavLink, useNavigate } from 'react-router';
+import { useAuth } from '../utils/AuthContext';
 import LogoWhite from '../assets/images/logo-white.png'
 import MobileLogo from '../assets/images/mobile-logo-white.png'
 import './Header.css';
 
-// Type Alias = works like a variable, but for types
 type HeaderProps = {
   cart: {
     productId: string;
@@ -13,11 +13,11 @@ type HeaderProps = {
   }[];
 }
 
-// TypeScript does not have enough info to figure out the type
 export function Header({ cart }: HeaderProps) {
+  const { user, isAuthenticated, logout } = useAuth();
   const [search, setSearch] = useState('');
   const navigate = useNavigate();
-  const debounceTimeout = useRef(null);
+  const debounceTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const handleSearchInput = (event: {
     target: {
@@ -76,8 +76,21 @@ export function Header({ cart }: HeaderProps) {
         </div>
 
         <div className="right-section">
-          <NavLink className="orders-link header-link" to="/orders">
+          {isAuthenticated ? (
+            <div className="user-info" style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
+              <span style={{ color: '#fff', fontSize: 14 }}>{user?.email}</span>
+              <button onClick={logout} className="logout-button" style={{
+                background: 'none', border: '1px solid #fff', color: '#fff',
+                padding: '4px 12px', borderRadius: 4, cursor: 'pointer', fontSize: 13
+              }}>Выйти</button>
+            </div>
+          ) : (
+            <NavLink className="orders-link header-link" to="/login" style={{ textDecoration: 'none' }}>
+              <span className="orders-text">Войти</span>
+            </NavLink>
+          )}
 
+          <NavLink className="orders-link header-link" to="/orders">
             <span className="orders-text">Заказы</span>
           </NavLink>
 
