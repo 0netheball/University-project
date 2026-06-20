@@ -58,7 +58,7 @@ export function SellerPage({ cart, loadCart }) {
     try {
       const formData = new FormData();
       formData.append('name', name);
-      formData.append('priceCents', String(Math.round(parseFloat(price))));
+      formData.append('price', String(Math.round(parseFloat(price))));
       formData.append('quantity', quantity);
       formData.append('keywords', keywords);
       if (imageFile) formData.append('image', imageFile);
@@ -80,7 +80,7 @@ export function SellerPage({ cart, loadCart }) {
 
   const handleEdit = (product) => {
     setName(product.name);
-    setPrice(String(product.priceCents));
+    setPrice(String(product.price));
     setQuantity(String(product.quantity));
     setKeywords(product.keywords?.filter(Boolean).join(', ') || '');
     setImagePreview(null);
@@ -157,7 +157,7 @@ export function SellerPage({ cart, loadCart }) {
                   <img className="seller-card-img" src={`/${product.image}`} alt={product.name} />
                   <div className="seller-card-info">
                     <div className="seller-card-name">{product.name}</div>
-                    <div className="seller-card-price">{formatCurrency(product.priceCents)}</div>
+                    <div className="seller-card-price">{formatCurrency(product.price)}</div>
                     <div className="seller-card-meta">В наличии: {product.quantity} шт.</div>
                     <div className="seller-card-keywords">
                       {product.keywords?.filter(Boolean).join(', ') || '—'}

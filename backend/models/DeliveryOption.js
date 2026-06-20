@@ -10,7 +10,7 @@ export const DeliveryOption = sequelize.define('DeliveryOption', {
     type: DataTypes.INTEGER,
     allowNull: false
   },
-  priceCents: {
+  price: {
     type: DataTypes.INTEGER,
     allowNull: false
   },

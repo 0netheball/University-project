@@ -48,7 +48,7 @@ export function CartItemDetails({ cartItem, loadCart }) {
           {cartItem.product.name}
         </div>
         <div className="product-price">
-          {formatCurrency(cartItem.product.priceCents)}
+          {formatCurrency(cartItem.product.price)}
         </div>
         <div className="product-quantity">
           <span>

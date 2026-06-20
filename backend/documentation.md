@@ -48,7 +48,7 @@ Returns a list of products.
       "stars": "number",
       "count": "number"
     },
-    "priceCents": "number",
+    "price": "number",
     "quantity": "number",
     "keywords": ["string"],
     "userId": "uuid | null",
@@ -74,7 +74,7 @@ Returns a list of all delivery options.
   {
     "id": "string",
     "deliveryDays": "number",
-    "priceCents": "number",
+    "price": "number",
     // Only included when expand=estimatedDeliveryTime
     "estimatedDeliveryTimeMs": "number"
   }
@@ -245,7 +245,7 @@ Returns all products created by the authenticated user, sorted by most recent fi
       "stars": "number",
       "count": "number"
     },
-    "priceCents": "number",
+    "price": "number",
     "quantity": "number",
     "keywords": ["string"],
     "userId": "uuid",
@@ -267,7 +267,7 @@ Creates a new product. The authenticated user is set as the product owner.
 **Request:** `multipart/form-data`
 - `image` (file, required): Product image
 - `name` (string, required): Product name
-- `priceCents` (number, required): Price in cents
+- `price` (number, required): Price in rubles
 - `quantity` (number, optional, default: 1): Stock quantity
 - `keywords` (string, optional): Comma-separated keywords
 
@@ -277,7 +277,7 @@ Creates a new product. The authenticated user is set as the product owner.
   "id": "uuid",
   "image": "uploads/filename.jpg",
   "name": "string",
-  "priceCents": "number",
+  "price": "number",
   "quantity": "number",
   "keywords": ["string"],
   "userId": "uuid",
@@ -299,7 +299,7 @@ Updates an existing product. Only the owner can update their products.
 **Request:** `multipart/form-data`
 - `image` (file, optional): New product image
 - `name` (string, optional): Product name
-- `priceCents` (number, optional): Price in cents
+- `price` (number, optional): Price in rubles
 - `quantity` (number, optional): Stock quantity
 - `keywords` (string, optional): Comma-separated keywords
 
@@ -309,7 +309,7 @@ Updates an existing product. Only the owner can update their products.
   "id": "uuid",
   "image": "uploads/filename.jpg",
   "name": "string",
-  "priceCents": "number",
+  "price": "number",
   "quantity": "number",
   "keywords": ["string"],
   "userId": "uuid",

@@ -7,7 +7,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 234
     },
-    "priceCents": 27000,
+    "price": 27000,
     "keywords": ["cpu", "intel", "processor"]
   },
   {
@@ -18,7 +18,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 344
     },
-    "priceCents": 15000,
+    "price": 15000,
     "keywords": ["cpu", "intel", "processor"]
   },
   {
@@ -29,7 +29,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 189
     },
-    "priceCents": 25000,
+    "price": 25000,
     "keywords": ["cpu", "intel", "processor"]
   },
   {
@@ -40,7 +40,7 @@ export const defaultProducts = [
       "stars": 5,
       "count": 456
     },
-    "priceCents": 40000,
+    "price": 40000,
     "keywords": ["cpu", "intel", "processor"]
   },
   {
@@ -51,7 +51,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 312
     },
-    "priceCents": 30000,
+    "price": 30000,
     "keywords": ["gpu", "nvidia", "graphics card"]
   },
   {
@@ -62,7 +62,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 278
     },
-    "priceCents": 50000,
+    "price": 50000,
     "keywords": ["gpu", "nvidia", "graphics card"]
   },
   {
@@ -73,7 +73,7 @@ export const defaultProducts = [
       "stars": 5,
       "count": 198
     },
-    "priceCents": 85000,
+    "price": 85000,
     "keywords": ["gpu", "nvidia", "graphics card"]
   },
   {
@@ -84,7 +84,7 @@ export const defaultProducts = [
       "stars": 5,
       "count": 567
     },
-    "priceCents": 150000,
+    "price": 150000,
     "keywords": ["gpu", "amd", "radeon", "graphics card"]
   },
   {
@@ -95,7 +95,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 145
     },
-    "priceCents": 25000,
+    "price": 25000,
     "keywords": ["motherboard", "asus", "rog"]
   },
   {
@@ -106,7 +106,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 198
     },
-    "priceCents": 18000,
+    "price": 18000,
     "keywords": ["motherboard", "msi"]
   },
   {
@@ -117,7 +117,7 @@ export const defaultProducts = [
       "stars": 4,
       "count": 123
     },
-    "priceCents": 20000,
+    "price": 20000,
     "keywords": ["motherboard", "gigabyte"]
   },
   {
@@ -128,7 +128,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 345
     },
-    "priceCents": 8000,
+    "price": 8000,
     "keywords": ["ram", "ddr5", "memory", "kingston"]
   },
   {
@@ -139,7 +139,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 267
     },
-    "priceCents": 14000,
+    "price": 14000,
     "keywords": ["ram", "ddr5", "memory", "kingston"]
   },
   {
@@ -150,7 +150,7 @@ export const defaultProducts = [
       "stars": 5,
       "count": 432
     },
-    "priceCents": 12000,
+    "price": 12000,
     "keywords": ["ssd", "storage", "samsung", "nvme"]
   },
   {
@@ -161,7 +161,7 @@ export const defaultProducts = [
       "stars": 4,
       "count": 178
     },
-    "priceCents": 7000,
+    "price": 7000,
     "keywords": ["hdd", "storage", "seagate", "hard drive"]
   },
   {
@@ -172,7 +172,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 234
     },
-    "priceCents": 12000,
+    "price": 12000,
     "keywords": ["cooling", "nzxt", "aio", "water cooling"]
   },
   {
@@ -183,7 +183,7 @@ export const defaultProducts = [
       "stars": 5,
       "count": 567
     },
-    "priceCents": 8000,
+    "price": 8000,
     "keywords": ["cooling", "noctua", "air cooler"]
   },
   {
@@ -194,7 +194,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 321
     },
-    "priceCents": 10000,
+    "price": 10000,
     "keywords": ["psu", "corsair", "power supply"]
   },
   {
@@ -205,7 +205,7 @@ export const defaultProducts = [
       "stars": 5,
       "count": 145
     },
-    "priceCents": 15000,
+    "price": 15000,
     "keywords": ["psu", "be quiet", "power supply"]
   },
   {
@@ -216,7 +216,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 289
     },
-    "priceCents": 9000,
+    "price": 9000,
     "keywords": ["case", "nzxt", "chassis", "atx"]
   },
   {
@@ -227,7 +227,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 412
     },
-    "priceCents": 8000,
+    "price": 8000,
     "keywords": ["case", "corsair", "chassis", "atx"]
   },
   {
@@ -238,7 +238,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 345
     },
-    "priceCents": 25000,
+    "price": 25000,
     "keywords": ["monitor", "lg", "27 inch", "gaming"]
   },
   {
@@ -249,7 +249,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 234
     },
-    "priceCents": 35000,
+    "price": 35000,
     "keywords": ["monitor", "samsung", "32 inch", "odyssey"]
   },
   {
@@ -260,7 +260,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 456
     },
-    "priceCents": 12000,
+    "price": 12000,
     "keywords": ["keyboard", "logitech", "mechanical", "gaming"]
   },
   {
@@ -271,7 +271,7 @@ export const defaultProducts = [
       "stars": 5,
       "count": 678
     },
-    "priceCents": 8000,
+    "price": 8000,
     "keywords": ["mouse", "logitech", "wireless", "gaming"]
   },
   {
@@ -282,7 +282,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 198
     },
-    "priceCents": 8000,
+    "price": 8000,
     "keywords": ["psu", "seasonic", "power supply"]
   },
   {
@@ -293,7 +293,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 156
     },
-    "priceCents": 18000,
+    "price": 18000,
     "keywords": ["psu", "thermaltake", "power supply"]
   },
   {
@@ -304,7 +304,7 @@ export const defaultProducts = [
       "stars": 4,
       "count": 234
     },
-    "priceCents": 15000,
+    "price": 15000,
     "keywords": ["motherboard", "asus", "tuf"]
   },
   {
@@ -315,7 +315,7 @@ export const defaultProducts = [
       "stars": 4,
       "count": 187
     },
-    "priceCents": 10000,
+    "price": 10000,
     "keywords": ["motherboard", "msi"]
   },
   {
@@ -326,7 +326,7 @@ export const defaultProducts = [
       "stars": 4,
       "count": 145
     },
-    "priceCents": 12000,
+    "price": 12000,
     "keywords": ["motherboard", "gigabyte"]
   },
   {
@@ -337,7 +337,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 167
     },
-    "priceCents": 35000,
+    "price": 35000,
     "keywords": ["gpu", "nvidia", "msi", "graphics card"]
   },
   {
@@ -348,7 +348,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 234
     },
-    "priceCents": 50000,
+    "price": 50000,
     "keywords": ["gpu", "amd", "radeon", "graphics card"]
   },
   {
@@ -359,7 +359,7 @@ export const defaultProducts = [
       "stars": 5,
       "count": 189
     },
-    "priceCents": 65000,
+    "price": 65000,
     "keywords": ["gpu", "amd", "msi", "graphics card"]
   },
   {
@@ -370,7 +370,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 312
     },
-    "priceCents": 7000,
+    "price": 7000,
     "keywords": ["cooling", "arctic", "aio", "water cooling"]
   },
   {
@@ -381,7 +381,7 @@ export const defaultProducts = [
       "stars": 4,
       "count": 178
     },
-    "priceCents": 9000,
+    "price": 9000,
     "keywords": ["cooling", "deepcool", "aio", "water cooling"]
   },
   {
@@ -392,7 +392,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 456
     },
-    "priceCents": 9000,
+    "price": 9000,
     "keywords": ["mouse", "razer", "wireless", "gaming"]
   },
   {
@@ -403,7 +403,7 @@ export const defaultProducts = [
       "stars": 4,
       "count": 234
     },
-    "priceCents": 5000,
+    "price": 5000,
     "keywords": ["mouse", "steelseries", "gaming"]
   },
   {
@@ -414,7 +414,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 567
     },
-    "priceCents": 15000,
+    "price": 15000,
     "keywords": ["monitor", "aoc", "24 inch", "gaming"]
   },
   {
@@ -425,7 +425,7 @@ export const defaultProducts = [
       "stars": 4,
       "count": 345
     },
-    "priceCents": 10000,
+    "price": 10000,
     "keywords": ["keyboard", "razer", "mechanical", "gaming"]
   },
   {
@@ -436,7 +436,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 289
     },
-    "priceCents": 18000,
+    "price": 18000,
     "keywords": ["keyboard", "steelseries", "mechanical", "gaming"]
   },
   {
@@ -447,7 +447,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 234
     },
-    "priceCents": 7000,
+    "price": 7000,
     "keywords": ["case", "be quiet", "chassis", "atx"]
   },
   {
@@ -458,7 +458,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 198
     },
-    "priceCents": 6500,
+    "price": 6500,
     "keywords": ["case", "fractal design", "chassis", "atx"]
   },
   {
@@ -469,7 +469,7 @@ export const defaultProducts = [
       "stars": 4,
       "count": 167
     },
-    "priceCents": 6000,
+    "price": 6000,
     "keywords": ["case", "phanteks", "chassis", "atx"]
   },
   {
@@ -480,7 +480,7 @@ export const defaultProducts = [
       "stars": 5,
       "count": 345
     },
-    "priceCents": 8000,
+    "price": 8000,
     "keywords": ["ssd", "storage", "wd", "nvme"]
   },
   {
@@ -491,7 +491,7 @@ export const defaultProducts = [
       "stars": 4,
       "count": 456
     },
-    "priceCents": 5000,
+    "price": 5000,
     "keywords": ["ssd", "storage", "kingston", "nvme"]
   },
   {
@@ -502,7 +502,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 234
     },
-    "priceCents": 7500,
+    "price": 7500,
     "keywords": ["ram", "ddr5", "memory", "kingston"]
   },
   {
@@ -513,7 +513,7 @@ export const defaultProducts = [
       "stars": 4.5,
       "count": 312
     },
-    "priceCents": 8500,
+    "price": 8500,
     "keywords": ["ram", "ddr5", "memory", "gskill"]
   }
 ];

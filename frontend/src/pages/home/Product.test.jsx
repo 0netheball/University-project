@@ -20,7 +20,7 @@ describe('test suite: Product component:', () => {
           stars: 4.5,
           count: 234
         },
-        priceCents: 15000,
+        price: 15000,
         keywords: ["cpu", "intel", "processor"]
       }; 
 

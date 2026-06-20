@@ -11,8 +11,8 @@ export function DeliveryOptions({ deliveryOptions, cartItem, loadCart }) {
       {deliveryOptions.map((deliveryOption) => {
         let priceString = 'Бесплатно';
 
-        if (deliveryOption.priceCents > 0) {
-          priceString = `${formatCurrency(deliveryOption.priceCents)} — доставка`;
+        if (deliveryOption.price > 0) {
+          priceString = `${formatCurrency(deliveryOption.price)} — доставка`;
         }
         // 2. Create function inside loop to get access to deliveryOption
         const updateDeliveryOption = async () => {

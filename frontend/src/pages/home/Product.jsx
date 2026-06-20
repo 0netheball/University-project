@@ -57,7 +57,7 @@ export function Product({ product, loadCart }) {
 
       <div className="product-price">
         {/* Problems with decimal numbers */}
-        {formatCurrency(product.priceCents)}
+        {formatCurrency(product.price)}
       </div>
 
       <div className="product-quantity-container">

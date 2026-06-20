@@ -19,7 +19,7 @@ export const Product = sequelize.define('Product', {
     type: DataTypes.JSON,
     allowNull: false
   },
-  priceCents: {
+  price: {
     type: DataTypes.INTEGER,
     allowNull: false
   },

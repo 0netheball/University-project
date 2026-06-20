@@ -17,12 +17,12 @@ router.get('/my-products', async (req, res) => {
 router.post('/products', upload.single('image'), async (req, res) => {
   if (!req.file) return res.status(400).json({ error: 'Image is required' });
 
-  const { name, priceCents, quantity, keywords } = req.body;
+  const { name, price, quantity, keywords } = req.body;
 
   const product = await Product.create({
     image: `uploads/${req.file.filename}`,
     name,
-    priceCents: parseInt(priceCents),
+    price: parseInt(price),
     quantity: quantity ? parseInt(quantity) : 1,
     rating: { stars: 0, count: 0 },
     keywords: keywords
@@ -41,7 +41,7 @@ router.put('/products/:id', upload.single('image'), async (req, res) => {
 
   const updates = {};
   if (req.body.name) updates.name = req.body.name;
-  if (req.body.priceCents) updates.priceCents = parseInt(req.body.priceCents);
+  if (req.body.price) updates.price = parseInt(req.body.price);
   if (req.body.quantity) updates.quantity = parseInt(req.body.quantity);
   if (req.body.keywords) updates.keywords = req.body.keywords.split(',').map(k => k.trim()).filter(Boolean);
   if (req.file) updates.image = `uploads/${req.file.filename}`;

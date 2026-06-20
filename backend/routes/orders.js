@@ -46,8 +46,8 @@ router.post('/', async (req, res) => {
     if (!deliveryOption) {
       throw new Error(`Invalid delivery option: ${item.deliveryOptionId}`);
     }
-    const productCost = product.priceCents * item.quantity;
-    const shippingCost = deliveryOption.priceCents;
+    const productCost = product.price * item.quantity;
+    const shippingCost = deliveryOption.price;
     totalCostCents += productCost + shippingCost;
     const estimatedDeliveryTimeMs = Date.now() + deliveryOption.deliveryDays * 24 * 60 * 60 * 1000;
     return {
