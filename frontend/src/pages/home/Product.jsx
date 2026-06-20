@@ -42,6 +42,10 @@ export function Product({ product, loadCart }) {
         {product.name}
       </div>
 
+      <div className="product-seller">
+        {product.user?.name || 'Магазин'}
+      </div>
+
       <div className="product-rating-container">
         <img className="product-rating-stars"
           data-testid="product-rating-stars"

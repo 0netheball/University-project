@@ -27,6 +27,10 @@ import dotenv from 'dotenv';
 dotenv.config();
 import fs from 'fs';
 
+// Associations
+Product.belongsTo(User, { foreignKey: 'userId', as: 'user' });
+User.hasMany(Product, { foreignKey: 'userId', as: 'products' });
+
 const app = express();
 const PORT = process.env.PORT || 3000;
 const __filename = fileURLToPath(import.meta.url);

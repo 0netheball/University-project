@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { Product } from '../models/Product.js';
+import { User } from '../models/User.js';
 import { upload } from '../middleware/upload.js';
 
 const router = Router();
@@ -7,7 +8,8 @@ const router = Router();
 router.get('/my-products', async (req, res) => {
   const products = await Product.findAll({
     where: { userId: req.userId },
-    order: [['createdAt', 'DESC']]
+    order: [['createdAt', 'DESC']],
+    include: { model: User, as: 'user', attributes: ['id', 'name'] }
   });
   res.json(products);
 });

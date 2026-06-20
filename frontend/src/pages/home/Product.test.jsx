@@ -36,6 +36,10 @@ describe('test suite: Product component:', () => {
     ).toBeInTheDocument();
 
     expect(
+      screen.getByText('Магазин')
+    ).toBeInTheDocument();
+
+    expect(
       screen.getByText('15 000 ₽')
     ).toBeInTheDocument();
 
