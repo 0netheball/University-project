@@ -40,7 +40,7 @@ export function PaymentSummary({paymentSummary, loadCart}) {
           <div className="payment-summary-row total-row">
             <div>Итого к оплате:</div>
             <div className="payment-summary-money">
-              {formatCurrency(paymentSummary.totalCostCents)}
+              {formatCurrency(paymentSummary.totalCost)}
             </div>
           </div>
 

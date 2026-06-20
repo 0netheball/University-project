@@ -35,7 +35,7 @@ router.post('/google', async (req, res) => {
     for (const order of seedOrders) {
       await Order.create({
         orderTimeMs: order.orderTimeMs,
-        totalCostCents: order.totalCostCents,
+        totalCost: order.totalCost,
         products: order.products,
         userId: user.id
       });

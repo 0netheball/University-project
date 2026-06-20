@@ -2,7 +2,7 @@ export const defaultOrders = [
   {
     id: "27cba69d-4c3d-4098-b42d-ac7fa62b7664",
     orderTimeMs: 1723456800000,
-    totalCostCents: 75000,
+    totalCost: 75000,
     userId: "00000000-0000-0000-0000-000000000001",
     products: [
       {
@@ -20,7 +20,7 @@ export const defaultOrders = [
   {
     id: "b6b6c212-d30e-4d4a-805d-90b52ce6b37d",
     orderTimeMs: 1718013600000,
-    totalCostCents: 50000,
+    totalCost: 50000,
     userId: "00000000-0000-0000-0000-000000000001",
     products: [
       {

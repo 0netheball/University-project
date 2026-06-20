@@ -21,7 +21,7 @@ router.get('/', async (req, res) => {
 
   const totalCostBeforeTaxCents = productCostCents + shippingCostCents;
   const taxCents = Math.round(totalCostBeforeTaxCents * 0.1);
-  const totalCostCents = totalCostBeforeTaxCents + taxCents;
+  const totalCost = totalCostBeforeTaxCents + taxCents;
 
   res.json({
     totalItems,
@@ -29,7 +29,7 @@ router.get('/', async (req, res) => {
     shippingCostCents,
     totalCostBeforeTaxCents,
     taxCents,
-    totalCostCents
+    totalCost
   });
 });
 

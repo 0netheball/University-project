@@ -11,7 +11,7 @@ export const Order = sequelize.define('Order', {
     type: DataTypes.BIGINT,
     allowNull: false
   },
-  totalCostCents: {
+  totalCost: {
     type: DataTypes.INTEGER,
     allowNull: false
   },

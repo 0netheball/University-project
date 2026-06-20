@@ -36,7 +36,7 @@ router.post('/', async (req, res) => {
     return res.status(400).json({ error: 'Cart is empty' });
   }
 
-  let totalCostCents = 0;
+  let totalCost = 0;
   const products = await Promise.all(cartItems.map(async (item) => {
     const product = await Product.findByPk(item.productId);
     if (!product) {
@@ -48,7 +48,7 @@ router.post('/', async (req, res) => {
     }
     const productCost = product.price * item.quantity;
     const shippingCost = deliveryOption.price;
-    totalCostCents += productCost + shippingCost;
+    totalCost += productCost + shippingCost;
     const estimatedDeliveryTimeMs = Date.now() + deliveryOption.deliveryDays * 24 * 60 * 60 * 1000;
     return {
       productId: item.productId,
@@ -57,11 +57,11 @@ router.post('/', async (req, res) => {
     };
   }));
 
-  totalCostCents = Math.round(totalCostCents * 1.1);
+  totalCost = Math.round(totalCost * 1.1);
 
   const order = await Order.create({
     orderTimeMs: Date.now(),
-    totalCostCents,
+    totalCost,
     products,
     userId: req.userId
   });

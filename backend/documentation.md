@@ -168,7 +168,7 @@ Returns all orders, sorted by most recent first.
   {
     "id": "uuid",
     "orderTimeMs": "number",
-    "totalCostCents": "number",
+    "totalCost": "number",
     "products": [
       {
         "productId": "uuid",
@@ -190,7 +190,7 @@ Creates a new order from the current cart items.
 {
   "id": "uuid",
   "orderTimeMs": "number",
-  "totalCostCents": "number",
+  "totalCost": "number",
   "products": [
     {
       "productId": "uuid",
@@ -216,7 +216,7 @@ Returns a specific order.
 {
   "id": "uuid",
   "orderTimeMs": "number",
-  "totalCostCents": "number",
+  "totalCost": "number",
   "products": [
     {
       "productId": "uuid",
@@ -354,7 +354,7 @@ Calculates and returns the payment summary for the current cart.
   "shippingCostCents": "number",
   "totalCostBeforeTaxCents": "number",
   "taxCents": "number",
-  "totalCostCents": "number"
+  "totalCost": "number"
 }
 ```
 
