@@ -23,6 +23,19 @@ export const Product = sequelize.define('Product', {
     type: DataTypes.INTEGER,
     allowNull: false
   },
+  quantity: {
+    type: DataTypes.INTEGER,
+    defaultValue: 1,
+    allowNull: false
+  },
+  userId: {
+    type: DataTypes.UUID,
+    allowNull: true,
+    references: {
+      model: 'Users',
+      key: 'id'
+    }
+  },
   keywords: {
     type: DataTypes.STRING,
     allowNull: false,

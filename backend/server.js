@@ -22,6 +22,7 @@ import { User } from './models/User.js';
 import authRoutes from './routes/auth.js';
 import { authenticate } from './middleware/authenticate.js';
 import { defaultUser } from './defaultData/defaultUser.js';
+import { upload } from './middleware/upload.js';
 import dotenv from 'dotenv';
 dotenv.config();
 import fs from 'fs';
@@ -38,6 +39,12 @@ app.use(cookieParser());
 
 // Serve images from the images folder
 app.use('/images', express.static(path.join(__dirname, 'images')));
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+// Temporary test endpoint for file upload (Step 1 verification)
+app.post('/api/upload-test', upload.single('image'), (req, res) => {
+  res.json({ filename: req.file.filename, path: `/uploads/${req.file.filename}` });
+});
 
 // Use routes
 app.use('/api/products', productRoutes);
